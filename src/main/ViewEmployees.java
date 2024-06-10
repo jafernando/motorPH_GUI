@@ -108,13 +108,11 @@ public class ViewEmployees extends javax.swing.JPanel {
         jTextFieldBday = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
-        jTextFieldSearch = new javax.swing.JTextField();
         jButtonDelete = new javax.swing.JButton();
         jButtonAdd = new javax.swing.JButton();
         jButtonUpdate = new javax.swing.JButton();
 
-        jPanel2.setBackground(new java.awt.Color(5, 68, 94));
+        jPanel2.setBackground(new java.awt.Color(212, 241, 244));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,16 +152,6 @@ public class ViewEmployees extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-
-        jLabel6.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("SEARCH BY EMP # :");
-
-        jTextFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextFieldSearchKeyReleased(evt);
-            }
-        });
 
         jButtonDelete.setText("DELETE");
 
@@ -206,12 +194,7 @@ public class ViewEmployees extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButtonUpdate)))
                         .addGap(37, 37, 37)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -219,11 +202,7 @@ public class ViewEmployees extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(7, 7, 7)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -248,7 +227,7 @@ public class ViewEmployees extends javax.swing.JPanel {
                             .addComponent(jButtonAdd))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonDelete)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -276,52 +255,6 @@ public class ViewEmployees extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSearchKeyReleased
-        // table search load
-        
-        String id = jTextFieldSearch.getText();
-        
-        try {
-        DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
-        dt.setRowCount(0);
-        
-        String query = "SELECT * FROM `motorph employee data` WHERE First Name = '"+id+"'";
-        
-        // Create a PreparedStatement
-        PreparedStatement ps = conn.prepareStatement(query);
-        
-        // Execute the query
-        ResultSet rs = ps.executeQuery();
-        
-        // Iterate over the result set and add rows to the table model
-        while (rs.next()) {
-            Vector row = new Vector();
-            row.add(rs.getInt(1));
-            row.add(rs.getString(4));
-            row.add(rs.getString(5));
-            row.add(rs.getString(6));
-            row.add(rs.getString(7));
-            row.add(rs.getString(8));
-            row.add(rs.getString(9));
-            row.add(rs.getString(10));
-            row.add(rs.getString(11));
-            row.add(rs.getString(12));
-            row.add(rs.getString(13));
-            row.add(rs.getString(14));
-            row.add(rs.getString(15));
-            dt.addRow(row);
-        }
-        
-        // Close the resources
-        rs.close();
-        ps.close();
-        conn.close();
-    } catch (SQLException e) {
-        // Handle any SQL exceptions
-        e.printStackTrace();
-    }
-    }//GEN-LAST:event_jTextFieldSearchKeyReleased
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
@@ -351,7 +284,6 @@ public class ViewEmployees extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -360,6 +292,5 @@ public class ViewEmployees extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldFirstName;
     private javax.swing.JTextField jTextFieldLastName;
     private javax.swing.JTextField jTextFieldPhone;
-    private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 }
