@@ -54,25 +54,34 @@ public class Dashboard extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 800));
 
         jPanel1.setBackground(new java.awt.Color(5, 68, 94));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelwelcome.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabelwelcome.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelwelcome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelwelcome.setText("Welcome,");
-        jPanel1.add(jLabelwelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(662, 14, -1, 34));
+        jLabelwelcome.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabelwelcome.setPreferredSize(new java.awt.Dimension(100, 30));
+        jLabelwelcome.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabelwelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 40));
 
         jLabelLoggedUser.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabelLoggedUser.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelLoggedUser.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelLoggedUser.setText("<name>");
-        jPanel1.add(jLabelLoggedUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(769, 16, 305, -1));
+        jLabelLoggedUser.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabelLoggedUser.setPreferredSize(new java.awt.Dimension(100, 30));
+        jLabelLoggedUser.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabelLoggedUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 300, 40));
 
         jLabelPosition.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabelPosition.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPosition.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelPosition.setText("<position>");
-        jPanel1.add(jLabelPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 50, 245, -1));
+        jLabelPosition.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabelPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 310, -1));
 
         jButtonViewProfile.setBackground(new java.awt.Color(117, 230, 218));
         jButtonViewProfile.setText("VIEW PROFILE");
@@ -111,7 +120,7 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
             .addComponent(jLayeredPane1)
         );
         layout.setVerticalGroup(

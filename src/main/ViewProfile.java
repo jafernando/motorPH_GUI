@@ -10,22 +10,24 @@ package main;
  */
 public class ViewProfile extends javax.swing.JPanel {
     
-    private int employeeNumber;
-    private String position;
-    private String supervisor;
-    private String status;
-    private String firstName;
-    private String lastName;
-    private String birthdate;
-    private String address;
-    private String phoneNumber;
-    private String TIN;
-    private String SSS;
-    private String philHealth;
-    private String pagIbig;
+        private int employeeNumber;
+        private String position;
+        private String supervisor;
+        private String status;
+        private String firstName;
+        private String lastName;
+        private String birthdate;
+        private String address;
+        private String phoneNumber;
+        private String TIN;
+        private String SSS;
+        private String philHealth;
+        private String pagIbig;
         
     public ViewProfile() {
         
+
+        initComponents();
         this.employeeNumber = employeeNumber;
         this.position = position;
         this.supervisor = supervisor;
@@ -39,8 +41,6 @@ public class ViewProfile extends javax.swing.JPanel {
         this.SSS = SSS;
         this.philHealth = philHealth;
         this.pagIbig = pagIbig;
-       
-        initComponents();
         
         jTextFieldEmpNum.setText(Integer.toString(employeeNumber));
         jTextFieldPosition.setText(position);
@@ -55,8 +55,26 @@ public class ViewProfile extends javax.swing.JPanel {
         jTextFieldSSS.setText(SSS);
         jTextFieldPHealth.setText(philHealth);
         jTextFieldPagIbig.setText(pagIbig);
+        
     }
-  
+    
+   /* public void loadProfile(int employeeNumber, String position, String supervisor, String status, String firstName,
+                       String lastName, String birthdate, String address, String phoneNumber, String TIN, String SSS,
+                       String philHealth, String pagIbig) {
+         
+    
+         
+        
+        
+        updateProfile();
+    
+    }   
+    
+    public void updateProfile(){
+    
+        
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -101,9 +119,8 @@ public class ViewProfile extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(212, 241, 244));
 
-        jPanel2.setBackground(new java.awt.Color(117, 230, 218));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "EMPLOYMENT INFORMATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12), new java.awt.Color(153, 153, 153))); // NOI18N
-        jPanel2.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(24, 154, 180));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "EMPLOYMENT INFORMATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12))); // NOI18N
 
         jLabelEmpNum.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabelEmpNum.setText("EMPLOYEE NUMBER :");
@@ -148,7 +165,7 @@ public class ViewProfile extends javax.swing.JPanel {
                         .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,11 +184,11 @@ public class ViewProfile extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelSupv)
                     .addComponent(jTextFieldSupv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(117, 230, 218));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "PERSONAL INFORMATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(24, 154, 180));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "PERSONAL INFORMATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(153, 153, 153));
 
         jLabelFirstName.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
@@ -249,11 +266,11 @@ public class ViewProfile extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPhone)
                     .addComponent(jTextFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(117, 230, 218));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "GOVERNMENT IDENTIFICATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel4.setBackground(new java.awt.Color(24, 154, 180));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "GOVERNMENT IDENTIFICATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 12))); // NOI18N
         jPanel4.setForeground(new java.awt.Color(153, 153, 153));
 
         jLabelTIN.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
@@ -339,7 +356,7 @@ public class ViewProfile extends javax.swing.JPanel {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(584, 584, 584))
+                .addGap(456, 456, 456))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,9 +364,9 @@ public class ViewProfile extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))

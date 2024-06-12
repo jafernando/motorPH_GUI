@@ -197,6 +197,9 @@ public class LogInForm extends javax.swing.JFrame {
           
                     Dashboard dashboard = new Dashboard(fname, position);
                     dashboard.setVisible(true);
+                    ViewProfile vp = new ViewProfile();
+                    vp.setVisible(true);
+                    
                     this.dispose();
                 }else{
                 JOptionPane.showMessageDialog(null, "Incorrect Username or Password.");
