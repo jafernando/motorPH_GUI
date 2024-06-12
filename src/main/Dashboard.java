@@ -20,11 +20,11 @@ public class Dashboard extends javax.swing.JFrame {
         
         }    
 
-    public Dashboard(String name, String position) {
+    public Dashboard(String name, String lastname, String position) {
 
         initComponents();
         
-        jLabelLoggedUser.setText(name);
+        jLabelLoggedUser.setText(name + " " + lastname);
         jLabelPosition.setText(position);
         jLayeredPane1.add(ve);
         jLayeredPane1.add(vp);

@@ -454,7 +454,44 @@ public class ViewEmployees extends javax.swing.JPanel {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
-        // TODO add your handling code here:
+        String empno = jTextFieldEmpNo.getText();
+    
+    if (empno.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please enter Employee # to delete.");
+        return;
+    }
+    
+    int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this record?", "Confirmation", JOptionPane.YES_NO_OPTION);
+    if (option == JOptionPane.YES_OPTION) {
+        try {
+            String sql = "DELETE FROM `motorph employee data` WHERE `Employee #` = ?";
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, empno);
+            int deleted = ps.executeUpdate();
+            
+            if (deleted > 0) {
+                JOptionPane.showMessageDialog(null, "Employee Record Deleted Successfully!");
+                
+                
+                jTextFieldFirstName.setText("");
+                jTextFieldLastName.setText("");
+                jTextFieldBday.setText("");
+                jTextFieldPhone.setText("");
+                jTextFieldAddress.setText("");
+                jTextFieldSSSNo.setText("");
+                jTextFieldTINNo.setText("");
+                jTextFieldPhilhealthNo.setText("");
+                jTextFieldPagIbigNo.setText("");
+                jTextFieldEmpNo.setText("");
+                tbload();
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Failed to delete Employee Record.");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }
     }//GEN-LAST:event_jButtonDeleteActionPerformed
 
     private void jComboBoxSupvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSupvActionPerformed
@@ -507,6 +544,7 @@ public class ViewEmployees extends javax.swing.JPanel {
                 ps.executeUpdate();
                 
                 JOptionPane.showMessageDialog(null, "Employee Record Added Sucessfully!");
+                tbload();
               
             }catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex);

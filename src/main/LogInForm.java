@@ -195,7 +195,7 @@ public class LogInForm extends javax.swing.JFrame {
                     String PagIbigNum = rs.getString(12);
                     JOptionPane.showMessageDialog(null, "Login Successful!");
           
-                    Dashboard dashboard = new Dashboard(fname, position);
+                    Dashboard dashboard = new Dashboard(fname, lastName, position);
                     dashboard.setVisible(true);
                     ViewProfile vp = new ViewProfile();
                     vp.setVisible(true);
