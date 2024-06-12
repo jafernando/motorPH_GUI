@@ -520,7 +520,7 @@ public class ViewEmployees extends javax.swing.JPanel {
             String status = (String) jComboBoxStatus.getSelectedItem();
             String position = (String) jComboBoxPosition.getSelectedItem();
             String supervisor = (String) jComboBoxSupv.getSelectedItem();
-
+            
             String sql = "INSERT INTO `motorph employee data` (`Employee #`, `Last Name`, `First Name`, `Birthday`, `Address`, `Phone Number`, `SSS #`, `Philhealth #`, `TIN #`, `Pag-ibig #`, `Status`, `Position`, `Immediate Supervisor`) "
                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 

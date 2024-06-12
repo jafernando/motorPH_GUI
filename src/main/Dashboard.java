@@ -1,6 +1,9 @@
 
 package main;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 /**
  *
@@ -11,19 +14,19 @@ public class Dashboard extends javax.swing.JFrame {
     ViewEmployees ve = new ViewEmployees();
     ViewProfile vp = new ViewProfile();
     ViewSalary vs = new ViewSalary();
-  
+    
     
     public Dashboard() {
         
         initComponents();
-
+        
         
         }    
 
     public Dashboard(String name, String lastname, String position) {
 
         initComponents();
-        
+        DateTime();
         jLabelLoggedUser.setText(name + " " + lastname);
         jLabelPosition.setText(position);
         jLayeredPane1.add(ve);
@@ -34,6 +37,22 @@ public class Dashboard extends javax.swing.JFrame {
         vp.setVisible(false);
         vs.setVisible(false);
     } 
+    
+    void DateTime(){
+    
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm a");
+        
+        String formattedNow = now.format(formatter);
+        
+        jLabelDateTime.setText(formattedNow);
+        
+    
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,13 +63,14 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelwelcome = new javax.swing.JLabel();
+        jLabelDateTime = new javax.swing.JLabel();
         jLabelLoggedUser = new javax.swing.JLabel();
         jLabelPosition = new javax.swing.JLabel();
         jButtonViewProfile = new javax.swing.JButton();
         jButtonViewEmployees = new javax.swing.JButton();
         jButtonViewSalary = new javax.swing.JButton();
         jButtonViewLeaves = new javax.swing.JButton();
+        jLabelwelcome1 = new javax.swing.JLabel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,14 +78,14 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(5, 68, 94));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelwelcome.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabelwelcome.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelwelcome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabelwelcome.setText("Welcome,");
-        jLabelwelcome.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabelwelcome.setPreferredSize(new java.awt.Dimension(100, 30));
-        jLabelwelcome.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabelwelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 40));
+        jLabelDateTime.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabelDateTime.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelDateTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelDateTime.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabelDateTime.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jLabelDateTime.setPreferredSize(new java.awt.Dimension(100, 30));
+        jLabelDateTime.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabelDateTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 10, 320, 40));
 
         jLabelLoggedUser.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabelLoggedUser.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,6 +133,15 @@ public class Dashboard extends javax.swing.JFrame {
         jButtonViewLeaves.setBackground(new java.awt.Color(117, 230, 218));
         jButtonViewLeaves.setText("LEAVE CREDITS");
         jPanel1.add(jButtonViewLeaves, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 110, 210, 40));
+
+        jLabelwelcome1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabelwelcome1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelwelcome1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelwelcome1.setText("Welcome,");
+        jLabelwelcome1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabelwelcome1.setPreferredSize(new java.awt.Dimension(100, 30));
+        jLabelwelcome1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabelwelcome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 40));
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
@@ -204,9 +233,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButtonViewLeaves;
     private javax.swing.JButton jButtonViewProfile;
     private javax.swing.JButton jButtonViewSalary;
+    private javax.swing.JLabel jLabelDateTime;
     private javax.swing.JLabel jLabelLoggedUser;
     private javax.swing.JLabel jLabelPosition;
-    private javax.swing.JLabel jLabelwelcome;
+    private javax.swing.JLabel jLabelwelcome1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
