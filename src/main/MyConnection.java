@@ -28,7 +28,7 @@ public class MyConnection {
             con = DriverManager.getConnection(url, root, pass);
 
             if (con != null) {
-                JOptionPane.showMessageDialog(null, "Enter your credentials.");
+                System.out.println("No Connection!");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error in Database: " + e.getMessage());
