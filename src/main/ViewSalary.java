@@ -380,6 +380,11 @@ public class ViewSalary extends javax.swing.JPanel {
         jLabelRiceView.setText(riceallow);
         jLabelPhoneView.setText(phoneallow);
         jLabelClothView.setText(clothingallow);
+        }
+
+        private String getValueFromCell(int row, int column) {
+            Object value = jTable1.getValueAt(row, column);
+            return (value == null) ? "" : value.toString();
         
     
     }//GEN-LAST:event_jTable1MouseClicked

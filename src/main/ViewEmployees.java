@@ -593,23 +593,24 @@ public class ViewEmployees extends javax.swing.JPanel {
                 
             ps = conn.prepareStatement(sql);
                 
-                ps.setString(1, empno);
-                ps.setString(2, lastName);
-                ps.setString(3, firstName);
-                ps.setString(4, birthday);
-                ps.setString(5, address);
-                ps.setString(6, phoneNum);
-                ps.setString(7, SSS);
-                ps.setString(8, philhealth);
-                ps.setString(9, TIN);
-                ps.setString(10, pagibig);
-                ps.setString(11, status);
-                ps.setString(12, position);
-                ps.setString(13, supervisor);
+                        ps.setString(1, lastName);
+                        ps.setString(2, firstName);
+                        ps.setString(3, birthday);
+                        ps.setString(4, address);
+                        ps.setString(5, phoneNum);
+                        ps.setString(6, SSS);
+                        ps.setString(7, philhealth);
+                        ps.setString(8, TIN);
+                        ps.setString(9, pagibig);
+                        ps.setString(10, status);
+                        ps.setString(11, position);
+                        ps.setString(12, supervisor);
+                        ps.setString(13, empno);
                 
                 ps.executeUpdate();
                 
                 JOptionPane.showMessageDialog(null, "Employee Record Updated Sucessfully!");
+                tbload();
               
             }catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex);
