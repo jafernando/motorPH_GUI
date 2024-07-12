@@ -28,6 +28,37 @@ public class ViewProfile extends javax.swing.JPanel {
         
 
         initComponents();
+        updateProfile();
+        
+    }
+    
+    public ViewProfile(int employeeNumber, String position, String supervisor, String status, String firstName,
+                       String lastName, String birthdate, String address, String phoneNumber, String TIN, String SSS,
+                       String philHealth, String pagIbig) {
+        
+
+        initComponents();
+        this.employeeNumber = employeeNumber;
+        this.position = position;
+        this.supervisor = supervisor;
+        this.status = status;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthdate = birthdate;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.TIN = TIN;
+        this.SSS = SSS;
+        this.philHealth = philHealth;
+        this.pagIbig = pagIbig;
+        updateProfile();
+        
+    }
+    
+    /*public void loadProfile(int employeeNumber, String position, String supervisor, String status, String firstName,
+                       String lastName, String birthdate, String address, String phoneNumber, String TIN, String SSS,
+                       String philHealth, String pagIbig) {
+         
         this.employeeNumber = employeeNumber;
         this.position = position;
         this.supervisor = supervisor;
@@ -55,24 +86,24 @@ public class ViewProfile extends javax.swing.JPanel {
         jTextFieldSSS.setText(SSS);
         jTextFieldPHealth.setText(philHealth);
         jTextFieldPagIbig.setText(pagIbig);
-        
-    }
     
-   /* public void loadProfile(int employeeNumber, String position, String supervisor, String status, String firstName,
-                       String lastName, String birthdate, String address, String phoneNumber, String TIN, String SSS,
-                       String philHealth, String pagIbig) {
-         
+    }   */
     
-         
-        
-        
-        updateProfile();
+    private void updateProfile(){
     
-    }   
-    
-    public void updateProfile(){
-    
-        
+        jTextFieldEmpNum.setText(Integer.toString(employeeNumber));
+        jTextFieldPosition.setText(position);
+        jTextFieldSupv.setText(supervisor);
+        jTextFieldStatus.setText(status);
+        jTextFirstName.setText(firstName);
+        jTextFieldLastName.setText(lastName);
+        jTextBday.setText(birthdate);
+        jTextAdd.setText(address);
+        jTextFieldPhone.setText(phoneNumber);
+        jTextFieldTIN.setText(TIN);
+        jTextFieldSSS.setText(SSS);
+        jTextFieldPHealth.setText(philHealth);
+        jTextFieldPagIbig.setText(pagIbig);
     
     }
     /**

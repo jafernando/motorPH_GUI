@@ -38,7 +38,7 @@ public class Dashboard extends javax.swing.JFrame {
         vs.setVisible(false);
     } 
     
-    void DateTime(){
+    private void DateTime(){
     
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm a");
